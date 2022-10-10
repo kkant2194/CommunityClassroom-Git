@@ -1,0 +1,85 @@
+
+1.deleting file 
+-----rm -rf names.txt
+
+2.lets say you deletd file mistake and we want to move to original(d417dde32546ecc90c008f36d271bfc2ff21e8e9) status then: 
+-----git reset d417dde32546ecc90c008f36d271bfc2ff21e8e9
+commit 17cebb05e316d83dee2bbbca1f6165a2705c5d69 (HEAD -> master)
+Author: kkant2194 <krishnakantsit@gmail.com>
+Date:   Tue Oct 4 11:30:32 2022 +0530
+
+    deleted names.txt
+
+commit 808df8a137e8e2d5a2a1fc6988c984d8975f8ec6
+Author: kkant2194 <krishnakantsit@gmail.com>
+Date:   Tue Oct 4 11:27:17 2022 +0530
+
+    modified names.txt
+
+commit d417dde32546ecc90c008f36d271bfc2ff21e8e9
+Author: kkant2194 <krishnakantsit@gmail.com>
+Date:   Tue Oct 4 11:26:30 2022 +0530
+
+    commiting names.txt file
+
+3.How to use git stash
+	--git add 
+	--git status	
+	--git stash
+  To get back all stashed commit 
+	--git stash pop
+	--git stash clear
+
+4. To add remote repository to git
+	--git remote add origin https://github.com/kkant2194/CommunityClassroom-Git.git
+
+
+5.to push changes into master
+	--git push origin master
+	
+6. Create a new local branch 
+	a.-- git branch feature(branchname) (still it would be at master )
+	
+	to checkout feature branch
+	b.-- git checkout feature
+	
+	We can combine both a & b into a new file
+		-- git checkout -b develop (create a new branch and also will also checkout and takes us to new branch develop)
+	
+	to add new file and push into feature
+	-- git push origin feature
+
+7. In point 2 lets say remote contains some file but you removed from local repo and you wanted to push , you have to do a force push 
+	-- git push origin feature -f
+	
+8. git rebase -i  e661206b25f3547a7dda0e94e4c4cc4dfd27516f
+
+9. To remove modified changes in file(to discard all changes in file)
+	-- git restore file.txt
+
+10. to skip staging area and commmit all changes 
+
+	-- git commit -a -m ""
+	
+11. Basic Merging Conflicts 
+	--first go to parent branch(kind of master)
+	--git merge your branch name
+	--git status
+	--git add 
+	--git commit 
+	--git push
+	
+12. git branch -v (last commit history)
+
+13. git branch --merged (already merged branches)
+
+14. git branch --no-merged (not already merged branches)
+
+15. git branch -d develop (to delete any merge but it will error because it is not merged)
+	git branch -D develop(forcefuuly delete the branch)
+	
+16. delete branch on remote
+	--git push -d origin branch_name
+	
+17. Squashing 
+	--git rebase -i HEAD~3
